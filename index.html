@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="loader ">
+      <span id="span01" class="red "></span>
+      <span id="span02" class="red "></span>
+      <span id="span03" class="red "></span>
+      <span id="span04" class="red "></span>
+      <span id="span05" class="red "></span>
+      <span id="span06" class="red "></span>
+      <span id="span07" class="red "></span>
+      <span id="span08" class="red "></span>
+      <span id="span09" class="red "></span>
+      <span id="span10" class="red "></span>
+    </div></body><br>
+    <div class="btn">
+    <button onclick="showColor('red')">Red</button>
+    <button onclick="showColor('green')">Green</button>
+    <button onclick="showColor('blue')">Blue</button>
+
+    </div>
+    <script>
+    function showColor(clr){
+        const spanClr=document.querySelectorAll("span");
+        const allColorClasses = ['red', 'green', 'blue'];
+        spanClr.forEach(function(elem){
+            allColorClasses.forEach(function(colorClass){
+
+                elem.classList.remove(colorClass)
+            })
+            elem.classList.add(clr)
+        })
+    }
+</script>
+  </body>
+</html>
+
