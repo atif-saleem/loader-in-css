@@ -18,14 +18,15 @@ span{
     width: 20px;
     border-radius: 50%;
     animation: wave 2s infinite ease-in-out;
-}
-.red{
     background-color: red;
 }
-.green{
+.loader.red span{
+    background-color: red;
+}
+.loader.green span{
     background-color: green;
 }
-.blue{
+.loader.blue span{
     background-color: blue;
 
 }
@@ -84,9 +85,6 @@ button{
 
 
 @keyframes wave {
-    0% {
-        transform: scale(0) translateY(0px); /* Start at original position */
-    }
     50% {
         transform: scale(1) translateY(-50px); /* Move 15px upwards (adjust value as needed) */
     }
