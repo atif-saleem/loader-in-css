@@ -149,17 +149,17 @@ button{
 .loader span:nth-child(10){
     animation-delay: 1s;
 }
-
-
+*/
+/*
 @keyframes wave {
     50% {
-        transform: scale(1) translateY(-50px); /* Move 15px upwards (adjust value as needed) */
+        transform: scale(1) translateY(-50px); 
     }
     100% {
-        transform:scale(0) translateY(0px); /* Return to original position */
+        transform:scale(0) translateY(0px); 
     }
-} */
-
+} 
+*/
 
 
 
