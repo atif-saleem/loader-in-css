@@ -1,15 +1,82 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
-.loader{
+.loader {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: currentColor;
+  color: red; /* default wave color */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.loader::before {
+  left: -30px;
+  animation: waveMove 1.5s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
+
+.loader::after {
+  left: 30px;
+  animation: waveMove 1.5s ease-in-out 0.6s infinite ;
+  /* animation-delay: 0.6s; */
+}
+.loader.red{
+color: red;
+}
+.loader.green{
+  color:green;
+}
+.loader.blue{
+  color:blue;
+}
+button{
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #90bc91;
+}
+/* @keyframes pulse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+} */
+
+@keyframes waveMove {
+  0%{
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* .loader{
     display: flex;
     gap:10px;
 }
@@ -91,4 +158,391 @@ button{
     100% {
         transform:scale(0) translateY(0px); /* Return to original position */
     }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .loader{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  color: red;
+  background-color: currentColor;
+  box-shadow:
+  -100px 0 0 0 currentColor,
+  -75px 0 0 0 currentColor,
+  -50px 0 0 0 currentColor,
+  -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0  0 currentColor,
+  100px 0 0 0 currentColor;
+  animation: wave 1.5s infinite 1s;
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* @keyframes wave{
+  0%{
+     box-shadow:
+     -100px 0 0 0 currentColor,
+     -75px 0 0 0 currentColor,
+     -50px 0 0 0 currentColor,
+     -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  12%{
+     box-shadow:
+     -100px -20px 0 0 currentColor,
+     -75px 0 0 0 currentColor,
+     -50px 0 0 0 currentColor,
+     -25px 0 0 0 currentColor,
+     25px 0 0 0 currentColor,
+     50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  24%{
+     box-shadow:
+     -100px 0 0 0 currentColor,
+     -75px -20px 0 0 currentColor,
+     -50px 0 0 0 currentColor,
+     -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  36%{
+        box-shadow:
+        -100px 0 0 0 currentColor,
+        -75px 0 0 0 currentColor,
+        -50px -20px 0 0 currentColor,
+        -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  48%{
+           box-shadow:
+           -100px 0 0 0 currentColor,
+           -75px 0 0 0 currentColor,
+           -50px 0 0 0 currentColor,
+           -25px -20px 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  60%{
+           box-shadow:
+           -100px 0 0 0 currentColor,
+           -75px 0 0 0 currentColor,
+           -50px 0 0 0 currentColor,
+           -25px 0 0 0 currentColor,
+  25px 20px 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  74%{
+        box-shadow:
+        -100px 0 0 0 currentColor,
+        -75px 0 0 0 currentColor,
+        -50px 0 0 0 currentColor,
+        -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 20px 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  87%{
+      box-shadow:
+        -100px 0 0 0 currentColor,
+        -75px 0 0 0 currentColor,
+        -50px 0 0 0 currentColor,
+        -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 20px 0 0 currentColor,
+  100px 0 0 0 currentColor;
+  }
+  100%{
+          box-shadow:
+          -100px 0 0 0 currentColor,
+          -75px 0 0 0 currentColor,
+          -50px 0 0 0 currentColor,
+          -25px 0 0 0 currentColor,
+  25px 0 0 0 currentColor,
+  50px 0 0 0 currentColor,
+  75px 0 0 0 currentColor,
+  100px +20px 0 0 currentColor;
+  }
+  
+} 
+.loader.red{
+  color: red;
 }
+.loader.blue{
+  color: blue;
+}
+.loader.green{
+  color: green;
+}
+button{
+  background-color: #afaaee;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: #425ad2;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.loader {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  color: red;
+  background-color: currentColor;
+  animation: wave 1.5s infinite linear;
+  box-shadow:
+    -80px 0 0 0 currentColor,
+    -60px 0 0 0 currentColor,
+    -40px 0 0 0 currentColor,
+    -20px 0 0 0 currentColor,
+     20px 0 0 0 currentColor,
+     40px 0 0 0 currentColor,
+     60px 0 0 0 currentColor,
+     80px 0 0 0 currentColor;
+}*/
+/*
+@keyframes wave {
+  0% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  12.5% {
+
+    box-shadow:
+      -80px -50px 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  25% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px -50px 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  37.5% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px -50px 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  50% {
+ 
+
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px -50px 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  62.5% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px -50px 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  75% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px -50px 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  87.5% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px -50px 0 0 currentColor,
+       80px 0 0 0 currentColor;
+  }
+  100% {
+    box-shadow:
+      -80px 0 0 0 currentColor,
+      -60px 0 0 0 currentColor,
+      -40px 0 0 0 currentColor,
+      -20px 0 0 0 currentColor,
+       20px 0 0 0 currentColor,
+       40px 0 0 0 currentColor,
+       60px 0 0 0 currentColor,
+       80px -50px 0 0 currentColor;
+  }
+}
+
+
+.loader.red {
+  color: red;
+}
+.loader.green {
+  color: green;
+}
+.loader.blue {
+  color: blue;
+}
+
+
+.btn {
+  display: flex;
+  gap: 10px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #ccc;
+} */
